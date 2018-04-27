@@ -1,0 +1,11 @@
+{
+  "name": "jquery.date-time",
+  "version": "1.0.1",
+  "description": "",
+  "main": "jquery.date-time.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
