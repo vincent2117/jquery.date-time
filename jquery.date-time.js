@@ -124,9 +124,12 @@
                     top: _this.ele.offset().top + _this.ele.height() + 5,
                     left: _this.ele.offset().left,
                     width: '220px',
-                    display: 'block',
+                    display:"none",
                 });
+
                 $("body").append(_this.$table);
+                _this.$table.slideDown(50);
+
                 _this.dateCount(); // 计算日期
                 e.stopPropagation();
             });
@@ -181,7 +184,6 @@
                 this.$td.eq(week % 7 + i).text(i + 1);
             }
         },
-
     };
 
     $.fn[pluginName] = function (options) {
