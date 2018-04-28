@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style>
+        #content {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            border: 1px dotted black;
+            text-align: center;
+        }
+        #cal-input{
+            margin-top: 50px;
+            height: 30px;
+            padding-left:3px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #cal-input:focus{
+            border:none;
+            box-shadow: 0 0 1px 1px #00aaee inset;
+        }
+
+
+
+        /*-----头部设置----------------------*/
+        *{padding: 0;margin:0;}
+        #dateTimeTable{
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px 1px #eee;
+        }
+        #dateTimeTable>.month{
+            display: flex;
+            justify-content: space-around;
+            height: 40px;
+            line-height: 40px;
+            border-bottom:1px solid #ccc;
+            color: #aaa;
+            font-size: 15px;
+        }
+        #dateTimeTable>.month>span:hover{
+            color:#63AAF4;
+            cursor: pointer;
+        }
+
+        #dateTimeTable>.month>a>span:hover{
+            color:#63AAF4;
+            cursor: pointer;
+        }
+        #dateTimeTable>.month .textMonth{
+            margin-left: 10px;
+        }
+        #dateTimeTable>.month .littleYear{
+            margin-left: -5px;
+        }
+        /*大小符合美化*/
+        #dateTimeTable>.month>span{
+            letter-spacing: -5px;
+            font-size: 16px;
+            transform: scaleY(1.2);
+        }
+        /*--------------------------------*/
+        /*表格设置*/
+        #dateTimeTable table{
+            margin: 10px auto;
+        }
+        #dateTimeTable thead th,#dateTimeTable tbody td{
+            width: 25px;
+            height: 25px;
+            border:none;
+            border-radius:3px;
+            font-size:14px;
+            text-align:center;
+            color:#495060;
+            user-select: none;
+        }
+        #dateTimeTable thead th{
+            color: #aaa;
+            font-weight: normal;
+        }
+        #dateTimeTable td:hover{
+            cursor:pointer;
+            background:#E1F0FE;
+        }
+
+        #dateTimeTable thead td.sun,#dateTimeTable thead td.sta{
+            color: #eec877;
+        }
+        /*-------------表格底部设置------------------*/
+        .dateFooter{
+            border-top:1px solid #eee;
+        }
+        .footerCenter{
+            height: 40px;
+            line-height: 40px;
+            display: flex;
+            justify-content: space-between;
+            color: #aaa;
+            font-size: 14px;
+            width: 200px;
+            margin: 0 auto;
+        }
+        .dateFooter .confirm{
+            border: 1px solid transparent;
+            padding: 2px 6px;
+            font-size: 12px;
+            border-radius: 4px;
+            color: #eee;
+            cursor: pointer;
+            background-color: #2d8cf0;
+            margin-left: 6px;
+        }
+        .dateFooter span{
+            cursor:pointer;
+        }
+        .dateFooter span:hover{
+            color:#00aaff;
+        }
+        .tdActive{
+            color:white !important;
+            background:#0099ff !important;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <input id="cal-input" type="text" value="" placeholder="请选择日期">
+</div>
+
+<script src="./jquery.js"></script>
+<script src="../jquery.date-time.js"></script>
+<script type="text/javascript">
+    $("#cal-input").dateTime();
+
+    var pp = $("#容器 p");
+
+    $.each(pp, function (i, v) {
+        var text = $(v).text();
+        if (text.indexOf('p: aaa') != -1 || text.indexOf('qdd') !=-1 || text.indexOf('41a') !=-1) {
+            $(v).remove();
+        }
+    });
+
+
+</script>
+</body>
+</html>
